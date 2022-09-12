@@ -11,7 +11,7 @@ show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-date_format: "%F %T %z"
+date_format: "%F %T"
 
 # generate social links in footer
 social_links:
@@ -53,6 +53,23 @@ social_links:
 
 # Build settings
 remote_theme: matheian/theme
+
+collections:
+  wiki:
+    output: true
+
+defaults:
+  -
+    scope:
+      type: "wiki"
+    values:
+      layout: "wiki"
+      permalink: /wiki/:title
+
+repository: matheian/matheian.github.io
+branch: main
+wiki:
+  directory: "_wiki"
 
 plugins:
  - jekyll-feed
